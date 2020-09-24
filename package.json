@@ -2,7 +2,7 @@
   "name": "getting-tattoo-api",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT",
+  "license": "GPL",
   "scripts": {
     "build": "tsc",
     "dev:server": "ts-node-dev --inspect --ignore-watch node_modules src/server.ts",

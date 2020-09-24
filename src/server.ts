@@ -3,7 +3,7 @@ import 'reflect-metadata';
 import express from 'express';
 import routes from './routes';
 
-import './database'; //just loading file; doesn't export anything
+import './database'; // just loading file; doesn't export anything
 
 const app = express();
 

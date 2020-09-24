@@ -15,10 +15,14 @@ class Appointment {
 	@PrimaryGeneratedColumn('uuid')
 	id: string;
 
-	// relationship OneToMany from point of view of appointment
-	@ManyToOne(() => User)
+	@Column()
+	provider_id: string;
 
-	// defines which column identify the appointment's provider
+	/**
+	 * relationship OneToMany from point of view of appointment
+	 * JoinColumn defines which column identify the appointment's provider
+	 */
+	@ManyToOne(() => User)
 	@JoinColumn({ name: 'provider_id' })
 	provider: User;
 

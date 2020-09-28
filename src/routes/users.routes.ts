@@ -16,7 +16,16 @@ usersRouter.post('/', async (request, response) => {
 			password,
 		});
 
-		return response.json(user);
+		// the operand of a 'delete' operator must be optional
+		// delete user.password;
+
+		return response.json({
+			name: user.name,
+			email: user.email,
+			id: user.id,
+			created_at: user.created_at,
+			updated_at: user.updated_at,
+		});
 	} catch (err) {
 		return response.status(400).json({ error: err.message });
 	}

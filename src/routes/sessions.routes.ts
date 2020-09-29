@@ -12,7 +12,7 @@ sessionsRouter.post('/', async (request, response) => {
 
 		const session = new CreateSessionService();
 
-		const { user } = await session.execute({
+		const { user, token } = await session.execute({
 			email,
 			password,
 		});
@@ -23,6 +23,7 @@ sessionsRouter.post('/', async (request, response) => {
 			id: user.id,
 			created_at: user.created_at,
 			updated_at: user.updated_at,
+			token, // check jwt.io/
 		});
 	} catch (err) {
 		return response.status(400).json({ error: err.message });

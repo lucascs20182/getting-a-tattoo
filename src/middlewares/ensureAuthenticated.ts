@@ -30,7 +30,12 @@ export default function ensureAuthenticated(
 		// force decoded type as TokenPayload
 		const { sub } = decoded as TokenPayload;
 
-		console.log(sub);
+		/**
+		 * Teremos o id do usuário em todas nossa rotas que são autenticadas.
+		 */
+		request.user = {
+			id: sub,
+		};
 
 		return next();
 	} catch {
